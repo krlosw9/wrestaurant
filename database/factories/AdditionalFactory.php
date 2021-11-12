@@ -14,7 +14,7 @@ class AdditionalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
         ];
     }
 }
