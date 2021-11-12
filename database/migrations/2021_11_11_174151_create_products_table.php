@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
 
             $table->unsignedBigInteger('category_id');
 
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('cost');
             $table->integer('price');
             $table->boolean('for_profit')->default(1);

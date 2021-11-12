@@ -16,7 +16,7 @@ class CreateAdditionalsTable extends Migration
         Schema::create('additionals', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('cost');
             $table->integer('price');
             $table->boolean('visible')->default(1);
