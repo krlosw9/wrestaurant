@@ -17,6 +17,7 @@ class CreateProductCategoriesTable extends Migration
             $table->id();
 
             $table->string('name')->unique();
+            $table->integer('order')->unique();
             $table->boolean('visible')->default(1);
 
             $table->timestamps();
