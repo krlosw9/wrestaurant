@@ -15,7 +15,15 @@ class CreateClientCreditsTable extends Migration
     {
         Schema::create('client_credits', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('invoice_id');
+            $table->boolean('invoice_paid')->default(0);
+
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('invoice_id')->references('id')->on('invoices');
         });
     }
 

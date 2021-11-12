@@ -15,7 +15,13 @@ class CreatePayCreditsTable extends Migration
     {
         Schema::create('pay_credits', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('client_id');
+            $table->integer('money_paid');
+
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients');
         });
     }
 

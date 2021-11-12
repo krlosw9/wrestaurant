@@ -15,7 +15,16 @@ class CreateProductBoardsTable extends Migration
     {
         Schema::create('product_boards', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('board_id');
+
+            $table->boolean('invoiced')->default(0);
+
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('board_id')->references('id')->on('boards');
         });
     }
 

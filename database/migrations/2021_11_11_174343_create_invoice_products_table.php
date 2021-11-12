@@ -15,7 +15,16 @@ class CreateInvoiceProductsTable extends Migration
     {
         Schema::create('invoice_products', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('invoice_id');
+            $table->unsignedBigInteger('product_id');
+            $table->text('remove_ingredient');
+            $table->text('comments_additional');
+
             $table->timestamps();
+
+            $table->foreign('invoice_id')->references('id')->on('invoices');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
