@@ -1,5 +1,5 @@
-<p align="center"><a href="#" target="_blank"><img src="" width="400"></a></p>
+<!--<p align="center"><a href="#" target="_blank"><img src="" width="400"></a></p>-->
 
-## About wRestaurant
+## Acerca de wRestaurant
 
 wRestaurant es el prototipo funcional administrativo para restaurantes.
