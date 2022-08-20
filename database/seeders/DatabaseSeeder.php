@@ -14,9 +14,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        User::factory(5)->create();
-        
+    {   
         $this->call(CompanySeeder::class);
         $this->call(AdditionalSeeder::class);
         $this->call(CommentSeeder::class);
@@ -32,5 +30,15 @@ class DatabaseSeeder extends Seeder
         $this->call(InvoiceProductSeeder::class);
         $this->call(ClientCreditSeeder::class);
         $this->call(PayCreditSeeder::class);
+        $this->call(RoleSeeder::class);
+
+        //Borrar en produccion
+        User::factory(5)->create();
+
+        User::create([
+            'name'      => 'Carlos Waldo',
+            'email'     => 'krlosw9@gmail.com',
+            'password'  => bcrypt('123456789')
+        ]);
     }
 }
